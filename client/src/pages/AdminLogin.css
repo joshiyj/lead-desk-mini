@@ -21,6 +21,7 @@
   filter: blur(80px);
   pointer-events: none;
   z-index: 0;
+  animation: smoothFadeIn 1s ease forwards;
 }
 
 .blob-top-left {
@@ -48,6 +49,7 @@
   z-index: 0;
   pointer-events: none;
   opacity: 0.55;
+  animation: smoothFadeIn 0.8s ease 0.3s both;
 }
 
 .grid-top-right {
@@ -78,6 +80,7 @@
   position: relative;
   z-index: 1;
   box-sizing: border-box;
+  animation: smoothRevealScale 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* Brand Header */
@@ -87,6 +90,7 @@
   justify-content: center;
   gap: 10px;
   margin-bottom: 2px;
+  animation: smoothRevealUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
 }
 
 .brand-logo-icon {
@@ -126,6 +130,7 @@
   color: #64748b;
   font-weight: 500;
   margin-top: 2px;
+  animation: smoothRevealUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.14s both;
 }
 
 .header-divider {
@@ -138,6 +143,7 @@
 .welcome-section {
   text-align: center;
   margin-bottom: 1rem;
+  animation: smoothRevealUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
 }
 
 .welcome-title {
@@ -159,6 +165,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
+  animation: smoothRevealUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
 }
 
 .light-field {
@@ -323,6 +330,7 @@
   padding: 0.75rem 1rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  animation: smoothRevealUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
 }
 
 .demo-credentials-box:hover {

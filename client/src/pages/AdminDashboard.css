@@ -17,6 +17,7 @@
   top: 0;
   z-index: 10;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  animation: smoothRevealUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .light-dashboard-header-inner {
@@ -119,6 +120,7 @@
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+  animation: smoothRevealUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
 }
 
 .light-search-wrap {

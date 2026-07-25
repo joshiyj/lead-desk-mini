@@ -1,4 +1,4 @@
-/* index.css — global reset + design tokens */
+/* index.css — global reset + design tokens + smooth reveal animations */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 *, *::before, *::after {
@@ -9,124 +9,58 @@
 
 :root {
   /* Palette */
-  --clr-bg:          #0a0f1e;
-  --clr-surface:     #111827;
-  --clr-surface-2:   #1a2236;
-  --clr-border:      rgba(255,255,255,0.08);
-  --clr-accent:      #6366f1;        /* indigo */
-  --clr-accent-glow: rgba(99,102,241,0.35);
-  --clr-accent-2:    #a78bfa;        /* violet */
-  --clr-text:        #f1f5f9;
-  --clr-muted:       #94a3b8;
-  --clr-error:       #f87171;
-  --clr-success:     #34d399;
+  --clr-bg:          #f8fafc;
+  --clr-surface:     #ffffff;
+  --clr-surface-2:   #f1f5f9;
+  --clr-border:      #e2e8f0;
+  --clr-accent:      #2563eb;
+  --clr-accent-glow: rgba(37, 99, 235, 0.25);
+  --clr-accent-2:    #6366f1;
+  --clr-text:        #0f172a;
+  --clr-muted:       #64748b;
+  --clr-error:       #ef4444;
+  --clr-success:     #10b981;
 
   /* Sizing */
-  --radius:  12px;
-  --radius-sm: 8px;
-  --shadow:  0 8px 32px rgba(0,0,0,0.4);
+  --radius:    16px;
+  --radius-sm: 10px;
+  --shadow:    0 16px 40px -10px rgba(15, 23, 42, 0.08);
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background: var(--clr-bg);
   color: var(--clr-text);
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
 }
 
-/* ── Shared form element styles ──────────────────────────────────────────── */
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+/* ── Global Smooth Reveal Animations ─────────────────────────────────────── */
+@keyframes smoothRevealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.field label {
-  font-size: 0.825rem;
-  font-weight: 600;
-  color: var(--clr-muted);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+@keyframes smoothRevealScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.96) translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
-.field input,
-.field select,
-.field textarea {
-  background: var(--clr-surface-2);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-sm);
-  color: var(--clr-text);
-  font-family: inherit;
-  font-size: 0.95rem;
-  padding: 0.75rem 1rem;
-  width: 100%;
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  -webkit-appearance: none;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus {
-  border-color: var(--clr-accent);
-  box-shadow: 0 0 0 3px var(--clr-accent-glow);
-}
-
-.field input.error,
-.field select.error,
-.field textarea.error {
-  border-color: var(--clr-error);
-}
-
-.field textarea {
-  resize: vertical;
-  min-height: 110px;
-}
-
-.field select option {
-  background: var(--clr-surface-2);
-}
-
-.field-error {
-  font-size: 0.8rem;
-  color: var(--clr-error);
-  margin-top: 2px;
-}
-
-/* ── Primary button ───────────────────────────────────────────────────────── */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: linear-gradient(135deg, var(--clr-accent), var(--clr-accent-2));
-  border: none;
-  border-radius: var(--radius-sm);
-  color: #fff;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 0.85rem 2rem;
-  width: 100%;
-  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 20px var(--clr-accent-glow);
-}
-
-.btn-primary:hover:not(:disabled) {
-  opacity: 0.92;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 28px var(--clr-accent-glow);
-}
-
-.btn-primary:active:not(:disabled) {
-  transform: translateY(0);
-}
-
-.btn-primary:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
+@keyframes smoothFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
