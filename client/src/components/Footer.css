@@ -1,0 +1,19 @@
+/* client/src/components/Footer.css */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-top: 1px solid var(--clr-border);
+  color: var(--clr-muted);
+  font-size: 0.85rem;
+}
+
+.site-footer a {
+  color: var(--clr-accent-2);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.site-footer a:hover {
+  color: var(--clr-text);
+}
