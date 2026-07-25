@@ -5,6 +5,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 const leadsRouter = require('./routes/leads');
+const authRouter  = require('./routes/auth');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -15,7 +16,7 @@ app.use(express.json());
 
 // ── Routes ─────────────────────────────────────────────────────────────────
 app.use('/api/leads', leadsRouter);
-// app.use('/api/auth', authRouter);   ← Phase 5
+app.use('/api/auth',  authRouter);
 
 // ── Health check ───────────────────────────────────────────────────────────
 app.get('/', (_req, res) => res.json({ status: 'LeadDesk Mini API is running' }));

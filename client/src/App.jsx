@@ -5,10 +5,15 @@ import LandingPage from './pages/LandingPage';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 
+// Guard: redirect to /admin/login if no JWT in localStorage
+function PrivateRoute({ children }) {
+  const token = localStorage.getItem('token');
+  return token ? children : <Navigate to="/admin/login" replace />;
+}
+
 export default function App() {
   return (
     <BrowserRouter>
-      {/* Global toast container */}
       <Toaster
         position="top-right"
         toastOptions={{
@@ -25,10 +30,17 @@ export default function App() {
       />
 
       <Routes>
-        <Route path="/"               element={<LandingPage />} />
-        <Route path="/admin/login"    element={<AdminLogin />} />
-        <Route path="/admin"          element={<AdminDashboard />} />
-        <Route path="*"               element={<Navigate to="/" replace />} />
+        <Route path="/"            element={<LandingPage />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route
+          path="/admin"
+          element={
+            <PrivateRoute>
+              <AdminDashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );

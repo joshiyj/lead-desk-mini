@@ -1,19 +1,24 @@
-/* client/src/components/Footer.css */
-.site-footer {
+/* client/src/components/Footer.css — Professional Light Theme */
+
+.light-site-footer {
   text-align: center;
-  padding: 1.5rem 1rem;
-  border-top: 1px solid var(--clr-border);
-  color: var(--clr-muted);
-  font-size: 0.85rem;
+  padding: 0.5rem 1rem 0.75rem 1rem;
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
 }
 
-.site-footer a {
-  color: var(--clr-accent-2);
+.light-site-footer a {
+  color: #2563eb;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.2s;
+  transition: color 0.15s ease;
 }
 
-.site-footer a:hover {
-  color: var(--clr-text);
+.light-site-footer a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
 }

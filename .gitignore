@@ -1,0 +1,8 @@
+# Ignore local build plan & markdown notes
+LeadDesk_Mini_Build_Plan.md
+
+# Environment variables & dependencies
+.env
+node_modules/
+dist/
+.DS_Store

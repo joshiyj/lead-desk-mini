@@ -3,7 +3,7 @@ import './Footer.css';
 
 export default function Footer() {
   return (
-    <footer className="site-footer">
+    <footer className="light-site-footer">
       <p>
         Built for{' '}
         <a

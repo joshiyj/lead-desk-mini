@@ -1,22 +1,173 @@
-/* client/src/components/LeadForm.css */
-.lead-form {
+/* client/src/components/LeadForm.css — Professional Compact Light UI */
+
+.light-lead-form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 0.65rem;
 }
 
-/* Spinner inside submit button */
-.spinner {
-  display: inline-block;
+.light-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.light-field label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.input-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.input-icon-wrapper:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.input-icon-wrapper.error {
+  border-color: #ef4444;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  color: #94a3b8;
+  pointer-events: none;
   width: 16px;
   height: 16px;
-  border: 2px solid rgba(255,255,255,0.35);
-  border-top-color: #fff;
-  border-radius: 50%;
-  animation: spin 0.7s linear infinite;
-  flex-shrink: 0;
 }
 
-@keyframes spin {
+.textarea-wrapper {
+  align-items: flex-start;
+}
+
+.textarea-icon {
+  top: 10px;
+}
+
+.input-icon-wrapper input,
+.input-icon-wrapper select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: #0f172a;
+  padding: 0.55rem 0.75rem 0.55rem 2.4rem;
+  border-radius: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.input-icon-wrapper select {
+  padding-right: 2.2rem;
+  cursor: pointer;
+}
+
+.input-icon-wrapper select option {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.select-chevron-icon {
+  position: absolute;
+  right: 12px;
+  color: #94a3b8;
+  pointer-events: none;
+  width: 14px;
+  height: 14px;
+}
+
+.input-icon-wrapper textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: #0f172a;
+  padding: 0.55rem 0.75rem 0.55rem 2.4rem;
+  border-radius: 10px;
+  resize: vertical;
+  min-height: 65px;
+}
+
+.input-icon-wrapper input::placeholder,
+.input-icon-wrapper textarea::placeholder {
+  color: #94a3b8;
+}
+
+.field-error {
+  font-size: 0.725rem;
+  color: #ef4444;
+  margin-top: 1px;
+}
+
+/* Submit Button */
+.light-form-btn {
+  width: 100%;
+  padding: 0.65rem 1.25rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.28);
+  margin-top: 0.25rem;
+}
+
+.light-form-btn:hover:not(:disabled) {
+  opacity: 0.95;
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.38);
+  transform: translateY(-1px);
+}
+
+.light-form-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.light-form-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.light-form-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: light-spin 0.7s linear infinite;
+}
+
+@keyframes light-spin {
   to { transform: rotate(360deg); }
+}
+
+@media (max-height: 720px) {
+  .light-lead-form { gap: 0.45rem; }
+  .input-icon-wrapper input,
+  .input-icon-wrapper select { padding: 0.45rem 0.65rem 0.45rem 2.2rem; font-size: 0.825rem; }
+  .input-icon-wrapper textarea { padding: 0.45rem 0.65rem 0.45rem 2.2rem; font-size: 0.825rem; min-height: 55px; }
+  .light-form-btn { padding: 0.55rem 1rem; font-size: 0.85rem; }
 }

@@ -1,0 +1,233 @@
+/* client/src/components/LeadTable.css — Professional Light UI */
+
+.light-table-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+  overflow: hidden;
+}
+
+/* ── Loading / Empty States ──────────────────────────────────────────────── */
+.table-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.table-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.spinner-ring {
+  display: block;
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(37, 99, 235, 0.15);
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.empty-state {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.empty-icon { font-size: 2.5rem; }
+
+.empty-state h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.empty-state p {
+  color: #64748b;
+  font-size: 0.875rem;
+  max-width: 36ch;
+  line-height: 1.5;
+}
+
+/* ── Table Wrapper ───────────────────────────────────────────────────────── */
+.table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.light-lead-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.light-lead-table thead {
+  background: #fafafa;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.light-lead-table th {
+  padding: 1rem 1.25rem;
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+}
+
+.light-lead-table td {
+  padding: 1.1rem 1.25rem;
+  color: #334155;
+  border-bottom: 1px solid #f8fafc;
+  vertical-align: middle;
+}
+
+.light-lead-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.light-lead-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.light-lead-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* Columns */
+.td-name {
+  font-weight: 700;
+  color: #0f172a !important;
+  white-space: nowrap;
+}
+
+.light-email-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.light-email-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.light-budget-pill {
+  display: inline-block;
+  background: #f3e8ff;
+  color: #7e22ce;
+  font-size: 0.775rem;
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.td-message {
+  max-width: 280px;
+  color: #475569;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.td-date {
+  white-space: nowrap;
+  color: #64748b;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Status Cell */
+.light-status-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+/* Badges */
+.light-badge {
+  display: inline-block;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.light-badge--blue {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.light-badge--amber {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.light-badge--green {
+  background: #d1fae5;
+  color: #047857;
+}
+
+/* Select wrapper with custom chevron */
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 130px;
+}
+
+.light-status-select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: #1e293b;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 5px 24px 5px 10px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.light-status-select:hover {
+  border-color: #cbd5e1;
+}
+
+.light-status-select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.select-chevron {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+}
