@@ -6,9 +6,9 @@ A lightweight, full-stack lead capture and management platform that allows publi
 
 ## 🔗 Live Links
 
-- **Landing Page (Public)**: `https://lead-desk-mini-amber-nine.vercel.app/`
-- **Admin Dashboard**: `https://lead-desk-mini-amber-nine.vercel.app/admin`
-- **GitHub Repository**: `https://github.com/joshiyj/lead-desk-mini`
+- **Landing Page (Public)**: https://lead-desk-mini-amber-nine.vercel.app/
+- **Admin Dashboard**: https://lead-desk-mini-amber-nine.vercel.app/admin
+- **GitHub Repository**: https://github.com/joshiyj/lead-desk-mini
 
 ---
 
